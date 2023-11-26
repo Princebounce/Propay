@@ -16,7 +16,8 @@ module.exports = {
       },
       colors: {
         customTeal: "#00A3FF", 
-        customBlue: "#4280ED"
+        customBlue: "#4280ED",
+        customGray: "#CAD5F3"
       },
     },
   },

@@ -1,9 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logos/PayPro.svg";
 import adduser from "../../assets/logos/AddUserMale.svg";
 import { IoMdClose } from "react-icons/io";
 
 const CreateProfile = () => {
+  const [file, setFile] = useState(null);
+  const [imageURL, setImageURL] = useState(null);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [workPhone, setWorkPhone] = useState("");
+  const [mobilePhone, setMobilePhone] = useState("");
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+    setImageURL(URL.createObjectURL(selectedFile));
+  };
+  const handleCreateProfile = async () => {
+    try {
+      const formData = new FormData();
+      formData.append("image", file);
+      formData.append("firstName", firstName);
+      formData.append("lastName", lastName);
+      formData.append("email", email);
+      formData.append("address", address);
+      formData.append("workPhone", workPhone);
+      formData.append("mobilePhone", mobilePhone);
+  
+      const response = await fetch("https://paypro-r94x.onrender.com/client/uploadImage", {
+        method: "POST",
+        body: formData,
+      });
+  
+      console.log("Server response:", response);
+  
+      if (response.ok) {
+        console.log("Profile created successfully");
+        // Add your logic for handling success
+      } else {
+        console.error("Error creating profile");
+        // Add your logic for handling error
+      }
+    } catch (error) {
+      console.error("Error during profile creation:", error);
+      // Add your logic for handling error
+    }
+  };
   return (
     <div>
       {/* Navbar section */}
@@ -24,29 +68,30 @@ const CreateProfile = () => {
 
         {/* Card */}
         <div className="bg-white p-6 rounded-lg shadow-md">
-         {/* User Icon and Image Upload */}
-<div className="flex flex-col items-center mb-4">
-  <label htmlFor="profileImage" className="mb-2">
-    <img
-      src={adduser}
-      alt="User Icon"
-      className="w-32 h-32 cursor-pointer"
-    />
-    <input
-      type="file"
-      id="profileImage"
-      name="profileImage"
-      accept=".png, .jpg"
-      style={{ display: "none" }}
-    />
-  </label>
-  <div>
-    <p className="text-sm text-gray-500">Add a profile picture</p>
-    <label htmlFor="profileImage" className="text-customTeal cursor-pointer">
-      Upload
-    </label>
-  </div>
-</div>
+          {/* User Icon and Image Upload */}
+          <div className="flex flex-col items-center mb-4">
+            {imageURL ? (
+              <img src={imageURL} alt="User Photo" className="w-32 h-32 rounded-full mb-2" />
+            ) : (
+              <label htmlFor="profileImage" className="mb-2">
+                <img src={adduser} alt="User Icon" className="w-32 h-32 cursor-pointer" />
+                <input
+                  type="file"
+                  id="profileImage"
+                  name="profileImage"
+                  accept=".png, .jpg"
+                  style={{ display: "none" }}
+                  onChange={handleFileChange}
+                />
+              </label>
+            )}
+            <div>
+              <p className="text-sm text-gray-500">Add a profile picture</p>
+              <label htmlFor="profileImage" className="text-customTeal cursor-pointer">
+                Upload
+              </label>
+            </div>
+          </div>
           {/* First Name and Last Name */}
           <div className="grid grid-cols-2 mt-6 gap-4">
             <div>

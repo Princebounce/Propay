@@ -1,10 +1,41 @@
-import React from "react";
-import logo from "../../assets/logos/PayPro.svg";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logos/PayPro.svg";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loginError, setLoginError] = useState(false);
+
+  const handleLogin = async () => {
+    try {
+      const response = await fetch("https://paypro-r94x.onrender.com/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Email: email,
+          Password: password,
+        }),
+      });
+      console.log("Server response:", response);
+      if (response.ok) {
+        // Login successful, navigate to the dashboard
+        console.log("API call successful");
+        // setLoginError(false);
+      } else {
+        // Handle login error
+        setLoginError(true);
+        console.error("Login failed");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
+
   return (
-    <div className=" flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center">
       {/* Navbar Section */}
       <div className="p-4 flex justify-between items-center w-full">
         {/* Logo */}
@@ -35,6 +66,8 @@ const Login = () => {
             id="email"
             name="email"
             placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="mt-1 p-2 h-16 w-full border"
           />
         </div>
@@ -49,6 +82,8 @@ const Login = () => {
             id="password"
             name="password"
             placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="mt-1 p-2 h-16 w-full border rounded-md"
           />
           <Link to="/forgot-password" className="text-blue-500 text-sm mt-2 block">
@@ -57,11 +92,12 @@ const Login = () => {
         </div>
 
         {/* Login Button */}
-        <Link to="/dashboard" className=" mt-16 w-2/5">
-          <button className="bg-blue-500 w-full text-white px-4 py-2 rounded-md hover:bg-blue-600">
-            Login
-          </button>
-        </Link>
+<Link to="/dashboard" className="mt-8 w-2/5">
+  <button onClick={handleLogin} className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+    Login
+  </button>
+</Link>
+
       </div>
     </div>
   );

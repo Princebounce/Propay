@@ -34,6 +34,7 @@ const StepThree = () => {
     "",
     "",
     "",
+    "",
   ]);
   const verificationCodeRefs = useRef([]);
 
@@ -118,6 +119,7 @@ const StepThree = () => {
         </div>
 
         {/* Confirm Email Button */}
+        <Link to="/login">
         <button
           id="confirmEmailBtn"
           onClick={handleConfirmEmail}
@@ -130,11 +132,12 @@ const StepThree = () => {
         >
           Confirm Your Email
         </button>
+        </Link>
 
         {/* Resend Code Section */}
         <div className="flex justify-center mt-6">
           <p className="text-gray-700">Didn't receive the code?</p>
-          <Link to="/login">
+          
             <button
               id="resendBtn"
               onClick={handleResendClick}
@@ -143,7 +146,7 @@ const StepThree = () => {
             >
               Resend{isResendDisabled && ` (${resendDelay}s)`}
             </button>
-          </Link>
+         
         </div>
       </div>
     </div>

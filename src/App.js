@@ -10,6 +10,7 @@ import CreateProfile from "./components/Pages/CreateProfile"
 import Hero from "./components/LandingPage/Hero"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Pages/Sidebar";
+import PaymentDetails from "./components/User/Payment/PaymentDetails";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/forgot-password" element={<FgWordThree />} />
       <Route path="/dashboard" element={<Sidebar />} />
       <Route path="/create-profile" element={<CreateProfile />} />
+      <Route path="/payment-details" element={<PaymentDetails />} />
     </Routes>
   </BrowserRouter>
   );

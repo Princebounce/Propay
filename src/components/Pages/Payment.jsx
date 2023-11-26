@@ -59,7 +59,7 @@ const Sidebar = () => {
             <li
               key={index}
               className={`flex rounded-md p-2 cursor-pointer text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-9" : "mt-2"} ${index === 0 && "bg-red"} hover:bg-opacity-10`}
+              ${Menu.gap ? "mt-9" : "mt-2"} ${index === 0 && "bg-light-white"} hover:bg-opacity-80`}
             >
               <img
                 src={Menu.logo}

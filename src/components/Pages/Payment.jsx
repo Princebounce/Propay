@@ -1,83 +1,154 @@
-import { useState } from "react";
-import paypro from "../../assets/logos/PayPro.svg";
-import control from "../../assets/logos/control-logo.svg";
-import invoice from "../../assets/logos/invoice-logo.svg"; 
-import notification from "../../assets/logos/notification-logo.svg"; 
-import payment from "../../assets/logos/payment-logo.svg"; 
-import todo from "../../assets/logos/todo-logo.svg"; 
-import tracking from "../../assets/logos/tracking-logo.svg"; 
-import client from "../../assets/logos/client-profile-logo.svg";
-import help from "../../assets/logos/help-logo.svg";
-import dashboard from "../../assets/logos/dashboard-logo.svg"; 
-import settings from "../../assets/logos/settings-logo.svg"; 
-import logout from "../../assets/logos/logout-logo.svg"; 
+import React from 'react';
 
-const Sidebar = () => {
-  const [open, setOpen] = useState(true);
-
-  const Menus = [
-    { title: "Dashboard", logo: dashboard },
-    { title: "Client", logo: client },
-    { title: "Payment", logo: payment },
-    { title: "Invoice", logo: invoice },
-    { title: "Tracking", logo: tracking },
-    { title: "Notification", logo: notification },
-    { title: "To-Do List", logo: todo },
-    { title: "Help Center", logo: help, gap: true },
-    { title: "Setting", logo: settings },
-    { title: "Logout", logo: logout },
-  ];
-
+const PaymentComponent = () => {
   return (
-    <div className="flex">
-      <div
-        className={`${
-          open ? "w-44" : "w-16 "
-        } bg-customBlue h-screen p-5 pt-8 relative duration-300`}
-      >
-        <img
-          src={control}
-          alt="control button"
-          className={`absolute cursor-pointer -right-3 top-10 w-5 ${!open && "rotate-180"}`}
-          onClick={() => setOpen(!open)}
-        />
-        <div className="flex flex-col items-center gap-y-2">
-          <img
-            src={paypro}
-            alt="paypro logo"
-            className={`cursor-pointer duration-500 ${open && "rotate-[360deg]"}`}
-          />
-          <h1
-            className={`text-white font-light text-xs duration-200 ${!open && "scale-0"}`}
-          >
-            Service Management Board
-          </h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-400">
+      <div className="container mx-auto">
+        {/* First Card */}
+        <div className="border p-4 w-full h-36 rounded-lg bg-slate-50 flex justify-between items-center shadow-lg mb-4">
+          <div>
+            <h3 className="text-lg font-bold">Payment</h3>
+            <img src="logo.png" alt="Logo" className="w-8 h-8" />
+            <p>123</p>
+            <p>Total number of payment transactions</p>
+          </div>
+          <div className="border-l-2 h-full">
+            <p>29</p>
+            <p>Expected Payment</p>
+            <p>05</p>
+            <p>Due Payment</p>
+          </div>
         </div>
-        <div className="border-b border-gray-400 my-4"></div>
-        <ul className="pt-6">
-          {Menus.map((Menu, index) => (
-            <li
-              key={index}
-              className={`flex rounded-md p-2 cursor-pointer text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-9" : "mt-2"} ${index === 0 && "bg-light-white"} hover:bg-opacity-80`}
-            >
-              <img
-                src={Menu.logo}
-                alt={Menu.title}
-                className="origin-left duration-200"
-              />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
-                {Menu.title}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="h-screen flex-1 p-7">
-        <h1 className="text-2xl font-semibold">Home Page</h1>
+
+        {/* Second Card */}
+        <div className="border p-4 bg-slate-50 rounded-lg w-full shadow-lg">
+          <div className="flex justify-between">
+            <h3 className="text-lg font-bold">Account Details</h3>
+            <button className="bg-green-500 text-white px-4 py-2">Edit</button>
+          </div>
+
+          {/* Additional Cards */}
+          <div className="border p-2 m-4 w-full shadow-md">
+          <div className="grid grid-cols-3 gap-4 mt-4">
+  {/* First Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 1</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Second Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 2</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Third Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 3</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Fourth Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 4</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Fifth Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 5</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Sixth Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 6</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Seventh Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 7</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Eighth Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 8</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Ninth Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 9</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+</div>
+</div>
+
+ {/* Content for the second additional card */}
+ <div className="border p-4 m-4 w-full shadow-md">
+  <h3>Paystack Account Details</h3>
+<div className="grid grid-cols-3 gap-3 mt-4">
+           
+            {/* First Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 1</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Second Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 2</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Third Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 3</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+<div>Flutterwave Account Details</div>
+  {/* Fourth Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 4</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Fifth Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 5</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+  {/* Sixth Item */}
+  <div className="border p-2">
+    <p className="font-bold text-sm mb-1">Label 6</p>
+    <p className="text-sm">Lorem ipsum dolor sit amet</p>
+  </div>
+
+          </div>
+          </div>
+
+          <div className="border p-2 col-span-3">
+              <h3 className="font-bold text-lg mb-2">Crypto Wallet Address</h3>
+
+              {/* Card for BTC Address */}
+              <div className="border p-2 mb-4">
+                <p className="font-bold text-sm mb-1">BTC Address</p>
+                <p className="text-sm">bc2qf75t8ur4r3a74ydnjg0jmsk6z3lg3yft78jpj</p>
+              </div>
+
+              {/* Card for ETH Address */}
+              <div className="border p-2">
+                <p className="font-bold text-sm mb-1">ETH Address</p>
+                <p className="text-sm">0xd8b9CB4743402512dA38dcB2561958c7cDC2559D</p>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default PaymentComponent;

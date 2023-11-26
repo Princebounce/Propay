@@ -11,6 +11,8 @@ import Hero from "./components/LandingPage/Hero"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Pages/Sidebar";
 import PaymentDetails from "./components/User/Payment/PaymentDetails";
+import Payment from "./components/Pages/Payment";
+import Invoice from "./components/Pages/Invoice";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
       <Route path="/dashboard" element={<Sidebar />} />
       <Route path="/create-profile" element={<CreateProfile />} />
       <Route path="/payment-details" element={<PaymentDetails />} />
+      <Route path="/invoice" element={<Invoice />} />
+      <Route path="/payment" element={<Payment/>} />
     </Routes>
   </BrowserRouter>
   );

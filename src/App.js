@@ -9,20 +9,21 @@ import FgWordThree from './components/User/FgWord/FgWordThree'
 import CreateProfile from "./components/Pages/CreateProfile"
 import Hero from "./components/LandingPage/Hero"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Pages/Sidebar";
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Hero/>} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/steptwo" element={<StepTwo />} />
+      <Route path="/niche" element={<Signup />} />
+      <Route path="/signup" element={<StepTwo />} />
       <Route path="/stepthree" element={<StepThree />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-pass" element={<FgWord />} />
       <Route path="/forgot-passwo" element={<FgWordTwo/>} />
       <Route path="/forgot-password" element={<FgWordThree />} />
-      <Route path="/welcome" element={<Hero />} />
+      <Route path="/dashboard" element={<Sidebar />} />
       <Route path="/create-profile" element={<CreateProfile />} />
     </Routes>
   </BrowserRouter>

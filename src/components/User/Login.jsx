@@ -11,7 +11,7 @@ const Login = () => {
         <img src={logo} alt="PayPro Logo" className="h-8" />
 
         {/* Create Account Button */}
-        <Link to="/signup">
+        <Link to="/niche">
           <button className="text-white bg-blue-500 px-4 py-2 rounded-md hover:bg-blue-600 mt-0">
             Create Account
           </button>

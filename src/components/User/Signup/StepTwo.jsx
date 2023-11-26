@@ -63,7 +63,7 @@ const StepTwo = (props) => {
 
     const handleContinue = async () => {
       setFormSubmitted(true);
-  
+    
       if (formValid) {
         // Construct the request body
         const requestBody = {
@@ -75,7 +75,9 @@ const StepTwo = (props) => {
           fName: firstName,
           lName: lastName,
         };
-  
+    
+        console.log("Sending data to server:", requestBody);
+    
         try {
           // Make the API call
           const response = await fetch("https://paypro-r94x.onrender.com/user/SignUp", {
@@ -85,7 +87,9 @@ const StepTwo = (props) => {
             },
             body: JSON.stringify(requestBody),
           });
-  
+    
+          console.log("Server response:", response);
+    
           // Check if the request was successful (status code 2xx)
           if (response.ok) {
             // Add your logic for handling a successful response, e.g., navigating to the next step
@@ -101,8 +105,7 @@ const StepTwo = (props) => {
       } else {
         // Optional: You can add additional logic or display an error message here
       }
-  
-  };
+    };
 
   return (
     <div className="h-screen flex flex-col">

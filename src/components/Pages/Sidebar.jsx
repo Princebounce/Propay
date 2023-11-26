@@ -20,12 +20,12 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={` overflow-x-hidden text-white ${isSidebarMinimized ? "minimized" : ""}`}>
+    <div className={`overflow-x-hidden text-white ${isSidebarMinimized ? "minimized" : ""}`}>
       {/* Sidebar Content */}
       <div className={`h-screen w-${isSidebarMinimized ? "1/12" : "1/6"} bg-customTeal text-white ${isSidebarMinimized ? "minimized" : ""}`}>
         {/* Logo and Service Management Board */}
-        <div className="p-4 flex items-center w-1 flex-col">
-          <img src={logo} alt="Your Logo" className={`h-${isSidebarMinimized ? "4" : "6"} mb-2`} />
+        <div className="p-4 flex items-center flex-col">
+          <img src={logo} alt="Your Logo" className="h-6 mb-2" />
           {!isSidebarMinimized && <p className="font-extralight">Service Management Board</p>}
         </div>
 

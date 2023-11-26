@@ -20,7 +20,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`overflow-x-hidden text-white ${isSidebarMinimized ? "minimized" : ""}`}>
+    <div className={`h-screen overflow-x-hidden text-white ${isSidebarMinimized ? "minimized" : ""}`}>
       {/* Sidebar Content */}
       <div className={`h-screen w-${isSidebarMinimized ? "1/12" : "1/6"} bg-customTeal text-white ${isSidebarMinimized ? "minimized" : ""}`}>
         {/* Logo and Service Management Board */}

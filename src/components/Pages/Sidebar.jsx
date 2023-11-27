@@ -21,7 +21,45 @@ import help from "../../assets/logos/help-logo.svg";
 import dashboard from "../../assets/logos/dashboard-logo.svg"; 
 import settings from "../../assets/logos/settings-logo.svg"; 
 import logout from "../../assets/logos/logout-logo.svg";
+import { IoSearchOutline, IoChatboxOutline, IoBellOutline, IoPersonOutline, IoArrowDown } from 'react-icons/io5';
+import { FaRegBell } from "react-icons/fa";
 
+const Navbar = () => {
+  return (
+    <div className="flex mb-20 w-full justify-between items-center p-4 bg-white">
+      {/* Left Section */}
+      <div className="flex items-center">
+        <span className="text-lg font-semibold">Welcome back, Esther Victor</span>
+      </div>
+
+      {/* Right Section */}
+      <div className="flex items-center space-x-4">
+        {/* Search Box */}
+        <div className="flex items-center">
+          <IoSearchOutline className="text-gray-500" />
+          <input
+            type="text"
+            placeholder="Search..."
+            className="border-b border-gray-300 focus:outline-none ml-2"
+          />
+        </div>
+
+        {/* Chat Icon */}
+        <IoChatboxOutline className="text-gray-500" />
+
+        {/* Bell Icon */}
+        <FaRegBell  className="text-gray-500" />
+
+        {/* User Icon */}
+        <div className="flex items-center">
+          <IoPersonOutline className="text-gray-500" />
+          <span className="ml-2">Esther Victor</span>
+          <IoArrowDown className="text-gray-500" />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 
 const Sidebar = () => {
@@ -69,7 +107,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex flex-col bg-customGray lg:flex-row">
       <div
         className={`${
           open ? "w-44" : "w-16 "
@@ -113,9 +151,13 @@ const Sidebar = () => {
           ))}
         </ul>
       </div>
-      <div className="h-screen flex-1 p-7">
-        {renderComponent()}
+      <div className={`h-screen flex-1 flex flex-col lg:pl-7 ${open ? 'w-full lg:w-5/6' : 'w-full lg:w-11/12'}`}>
+        <Navbar open={open} />
+        <div className="flex-1 p-4 lg:p-7">
+          {renderComponent()}
+        </div>
       </div>
+
     </div>
   );
 };

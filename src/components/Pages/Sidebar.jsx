@@ -22,11 +22,13 @@ import dashboard from "../../assets/logos/dashboard-logo.svg";
 import settings from "../../assets/logos/settings-logo.svg"; 
 import logout from "../../assets/logos/logout-logo.svg";
 import { IoSearchOutline, IoChatboxOutline, IoBellOutline, IoPersonOutline, IoArrowDown } from 'react-icons/io5';
+import { IoIosArrowDown } from "react-icons/io";
+import { FaRegUserCircle } from "react-icons/fa";
 import { FaRegBell } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div className="flex mb-20 w-full justify-between items-center p-4 bg-white">
+    <div className="flex relative -left-7 mx-0 w-full justify-between items-center rounded-lg p-4 bg-white">
       {/* Left Section */}
       <div className="flex items-center">
         <span className="text-lg font-semibold">Welcome back, Esther Victor</span>
@@ -52,9 +54,9 @@ const Navbar = () => {
 
         {/* User Icon */}
         <div className="flex items-center">
-          <IoPersonOutline className="text-gray-500" />
+          <FaRegUserCircle  className="text-gray-500 " />
           <span className="ml-2">Esther Victor</span>
-          <IoArrowDown className="text-gray-500" />
+          <IoIosArrowDown  className="text-gray-500 ml-4" />
         </div>
       </div>
     </div>
@@ -107,7 +109,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex flex-col bg-customGray lg:flex-row">
+    <div className="flex flex-col bg-customGray lg lg:flex-row">
       <div
         className={`${
           open ? "w-44" : "w-16 "
@@ -115,7 +117,7 @@ const Sidebar = () => {
       ><img
       src={control}
       alt="control button"
-      className={`absolute cursor-pointer -right-3 top-10 w-5 ${!open && "rotate-180"}`}
+      className={`absolute cursor-pointer -right-3 top-20 w-5 ${!open && "rotate-180"}`}
       onClick={() => setOpen(!open)}
     />
     <div className="flex flex-col items-center gap-y-2">
@@ -153,13 +155,11 @@ const Sidebar = () => {
       </div>
       <div className={`h-screen flex-1 flex flex-col lg:pl-7 ${open ? 'w-full lg:w-5/6' : 'w-full lg:w-11/12'}`}>
         <Navbar open={open} />
-        <div className="flex-1 p-4 lg:p-7">
+        <div className="flex-1 container">
           {renderComponent()}
         </div>
       </div>
-
     </div>
   );
 };
-
 export default Sidebar;

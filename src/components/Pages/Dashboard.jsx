@@ -10,7 +10,7 @@ import PieChart from "./Piechart";
 const Dashboard = () => {
   return (
     <div className="flex bg-customGray">
-      <div className="container flex flex-col  mt-8 space-y-4">
+      <div className="container flex flex-col mt-8 space-y-4">
         {/* Three equal-sized cards */}
         <div className="grid justify-evenly grid-cols-3 mx-9 gap-4">
           {/* Card 1 */}
@@ -53,7 +53,7 @@ const Dashboard = () => {
           </div>
         </div>
 {/*  Pie*/}
-        <div className="grid grid-cols-5 mx-10 my-10 gap-4 w-full bottom-10 mt-8"> 
+<div className="grid grid-cols-5 gap-4 w-full bottom-10 mt-8">
           {/* Place "Invoice Statistics" at the top left */}
           <div className="col-span-5 lg:col-span-2 p-4 bg-slate-50 rounded-md shadow-md">
             <label className="font-extralight text-xs">
@@ -93,7 +93,8 @@ const Dashboard = () => {
         </div>
 
         {/* Third Card */}
-        <div className="container bg-slate-50 p-8 mx-10 my-10  rounded-lg overflow-y-auto max-h-96 border shadow-md">
+       {/* Third Card */}
+       <div className="container bg-slate-50 p-8 rounded-lg overflow-y-auto max-h-96 border shadow-md">
           <div className="flex mb-4 justify-between">
             <h3 className="text-lg font-semibold">Invoices</h3>
             <div className="flex">

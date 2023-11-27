@@ -95,6 +95,7 @@ const Hero = () => {
       {/* Hero Image section */}
       <div className="mx-0 my-0">
         <img src={hero} alt="Hero" className="w-full" />
+        <Link to="/signup"><button className="relative -top-10 bg-customTeal rounded-md">Get Started </button></Link>
       </div>
 
       <Offer />

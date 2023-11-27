@@ -1,6 +1,6 @@
 import React from "react";
 import rectangle from "../../assets/logos/rectangle.svg";
-
+import { Link } from "react-router-dom";
 const Payment = () => {
   return (
     <div className="flex flex-col items-center min-h-80  mt-4 w-[43rem] bg-customGray ">
@@ -37,8 +37,13 @@ const Payment = () => {
             <h3 className="text-lg font-bold mb-4 md:mb-0 md:mr-4">
               Account Details
             </h3>
-            <button className="bg-green-500 text-white px-4 py-2 mb-4 md:mb-0 md:ml-4">
+            <Link to="/payment-details">
+            <button className="bg-customBlue text-white px-4 py-2 mb-4 md:mb-0 md:ml-4">
               Edit
+            </button>
+            </Link>
+            <button className="bg-customBlue text-white px-4 py-2 mb-4 md:mb-0 md:ml-4">
+              Add New
             </button>
           </div>
 

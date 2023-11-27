@@ -13,6 +13,8 @@ import Sidebar from "./components/Pages/Sidebar";
 import PaymentDetails from "./components/User/Payment/PaymentDetails";
 import Payment from "./components/Pages/Payment";
 import Invoice from "./components/Pages/Invoice";
+import InvoiceTemp from "./components/Pages/InvoiceTemp";
+import Dashboard from "./components/Pages/Dashboard";
 
 function App() {
   return (
@@ -31,6 +33,11 @@ function App() {
       <Route path="/payment-details" element={<PaymentDetails />} />
       <Route path="/invoice" element={<Invoice />} />
       <Route path="/payment" element={<Payment/>} />
+      <Route path="/menu" element={<Dashboard/>} />
+      
+      <Route path="/invoice-temp" element={<InvoiceTemp />} />
+
+      
     </Routes>
   </BrowserRouter>
   );

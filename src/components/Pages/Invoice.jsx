@@ -9,8 +9,8 @@ import download from "../../assets/logos/download-logo.svg";
 
 const Invoice = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-customGray">
-      <div className="container mt-24 flex flex-col lg:flex-row w-full lg:w-1/2 bg-white p-5 mx-10 my-10 mb-4 rounded-lg justify-between">
+    <div className="flex flex-col  ml-[-1.5rem] bg-customGray">
+      <div className="container mt-8 lg:flex lg:flex-row w-full lg:w-1/2 bg-slate-50 p-5 mx-4 my-4 mb-4 rounded-lg justify-between">
         {/* Left Content */}
         <div className="flex items-start mb-4 lg:mb-0 lg:mr-4">
           <div className="ml-2">
@@ -36,12 +36,12 @@ const Invoice = () => {
       </div>
 
       {/* Second Card */}
-      <div className="container bg-white p-8 mx-10 my-10 rounded-lg overflow-y-auto max-h-96 border">
+      <div className="container bg-slate-50 p-4 lg:p-8 mx-4 my-4 rounded-lg overflow-y-auto  lg:max-h-[25rem] border lg:w-[90%]">
         <div className="flex mb-4 justify-between">
           <h3 className="text-lg font-semibold">Invoices</h3>
           <div className="flex">
             <IoFilterOutline alt="Filter Icon" className="w-6 h-6 mr-4" />
-            <p className="mr-12 hidden lg:inline">Filter</p>
+            <p className="mr-4 lg:mr-12 hidden lg:inline">Filter</p>
             <BiDotsHorizontalRounded className="w-6 h-6 bg-gray-500 rounded-full flex items-center justify-center" />
           </div>
         </div>
@@ -59,19 +59,19 @@ const Invoice = () => {
 
         {/* Rows */}
         {[...Array(10).keys()].map((index) => (
-          <div key={index} className="flex mt-5 p-2 hover:bg-customTeal">
-            <div className="w-1/12">{index + 1}</div>
-            <div className="w-2/12 flex justify-start">
+          <div key={index} className="flex flex-col mt-4 lg:flex-row lg:items-center p-2 hover:bg-customTeal">
+            <div className="lg:w-1/12">{index + 1}</div>
+            <div className="lg:w-2/12 flex justify-start items-center">
               #12345{" "}
               <Link to="/">
                 <img src={download} className="ml-1 w-4 h-4" alt="download" />
               </Link>
             </div>
-            <div className="w-2/12">Buchi Paints</div>
-            <div className="w-2/12">Screeding</div>
-            <div className="w-2/12">Order</div>
-            <div className="w-2/12">1/1/1990</div>
-            <div className="w-1/12">$25</div>
+            <div className="lg:w-2/12">Buchi Paints</div>
+            <div className="lg:w-2/12">Screeding</div>
+            <div className="lg:w-2/12">Order</div>
+            <div className="lg:w-2/12">1/1/1990</div>
+            <div className="lg:w-1/12">$25</div>
           </div>
         ))}
       </div>

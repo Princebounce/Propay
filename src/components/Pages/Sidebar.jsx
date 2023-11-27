@@ -28,7 +28,7 @@ import { FaRegBell } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div className="flex relative -left-7 mx-0 w-full justify-between items-center rounded-lg p-4 bg-white">
+    <div className="flex relative xl:-left-7 mx-0 w-full justify-between items-center rounded-lg p-4 bg-white">
       {/* Left Section */}
       <div className="flex items-center">
         <span className="text-lg font-semibold">Welcome back, Esther Victor</span>
@@ -50,13 +50,13 @@ const Navbar = () => {
         <IoChatboxOutline className="text-gray-500" />
 
         {/* Bell Icon */}
-        <FaRegBell  className="text-gray-500" />
+        <FaRegBell className="text-gray-500" />
 
         {/* User Icon */}
         <div className="flex items-center">
-          <FaRegUserCircle  className="text-gray-500 " />
-          <span className="ml-2">Esther Victor</span>
-          <IoIosArrowDown  className="text-gray-500 ml-4" />
+          <FaRegUserCircle className="text-gray-500 " />
+          <span className="ml-2 hidden lg:inline">Esther Victor</span>
+          <IoIosArrowDown className="text-gray-500 ml-4" />
         </div>
       </div>
     </div>
@@ -113,7 +113,7 @@ const Sidebar = () => {
       <div
         className={`${
           open ? "w-44" : "w-16 "
-        } bg-customBlue h-screen p-5 pt-8 relative duration-300`}
+        } bg-customBlue h-full p-5 pt-8 relative duration-300`}
       ><img
       src={control}
       alt="control button"

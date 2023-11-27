@@ -9,10 +9,10 @@ import PieChart from "./Piechart";
 
 const Dashboard = () => {
   return (
-    <div className="flex lg:-left-7 mx-0 bg-customGray">
-      <div className="container flex flex-col mt-4 space-y-4">
+    <div className="flex flex-col lg:flex-row mx-0 bg-customGray">
+      <div className="container flex flex-col mt-4 space-y-4 w-full lg:w-[60rem] lg:-left-7">
         {/* Three equal-sized cards */}
-        <div className="grid justify-evenly grid-cols-3 mx-9 gap-4">
+        <div className="grid lg:w-full justify-evenly grid-cols-1 lg:grid-cols-3 mx-9 gap-4">
           {/* Card 1 */}
           <div className="p-4 bg-slate-50 mb-4 rounded-md flex justify-between items-center shadow-md">
             <div className="flex items-center">
@@ -52,21 +52,17 @@ const Dashboard = () => {
             <img src={invoice} alt="Right Image" className="ml-12" />
           </div>
         </div>
+
         {/*  Pie*/}
-        <div className="grid grid-cols-5 gap-4 w-full mt-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
           {/* Place "Invoice Statistics" at the top left */}
-          <div className="col-span-5 lg:col-span-2 p-4 bg-slate-50 rounded-md shadow-md">
-            <label className="font-extralight text-xs">
-              Invoice Statistics
-            </label>
+          <div className="p-4 bg-slate-50 rounded-md shadow-md">
+            <label className="font-extralight text-xs">Invoice Statistics</label>
             {/* First card with pie chart */}
             <div className="flex justify-between items-center space-x-4 mt-2">
-              {" "}
-              {/* Adjusted mt-2 */}
               <div className="flex-1">
                 {/* Placeholder: Pie chart component */}
-                <img src={pie} alt="pie" className="max-h-40" />{" "}
-                {/* Adjusted max-height */}
+                <img src={pie} alt="pie" className="max-h-40 w-full" />
               </div>
               <div className="flex-1">
                 <label className="font-extralight text-xs" htmlFor="">
@@ -86,20 +82,15 @@ const Dashboard = () => {
           </div>
 
           {/* Second Card in Fish Card (2/3 width) */}
-          <div className="col-span-3 lg:col-span-3 p-4 bg-slate-50 rounded-md shadow-md">
-            <label className="font-extralight text-xs mb-2">
-              {" "}
-              {/* Adjusted mb-2 */}
-              Sales Analytics
-            </label>
+          <div className="p-4 bg-slate-50 rounded-md shadow-md">
+            <label className="font-extralight text-xs mb-2">Sales Analytics</label>
             {/* Placeholder: Image */}
-            <img src={graph} alt="graphh" className="max-h-40" />{" "}
-            {/* Adjusted max-height */}
+            <img src={graph} alt="graphh" className="max-h-40 w-full" />
           </div>
         </div>
 
         {/* Third Card */}
-        <div className="container bg-slate-50 p-8 rounded-lg overflow-y-auto max-h-40 border shadow-md">
+        <div className="p-8 bg-slate-50 rounded-lg overflow-y-auto max-h-40 border shadow-md mt-4">
           <div className="flex mb-4 justify-between">
             <h3 className="text-xs font-extralight">Recent invoices</h3>
             <div className="flex">
@@ -126,7 +117,7 @@ const Dashboard = () => {
           {[...Array(10).keys()].map((index) => (
             <div key={index} className="flex mt-5 p-2 hover:bg-customTeal">
               <div className="w-1/12">{index + 1}</div>
-              <div className="w-2/12 ">#12345 </div>
+              <div className="w-2/12">#12345 </div>
               <div className="w-2/12">Buchi Paints</div>
               <div className="w-2/12">Screeding</div>
               <div className="w-2/12">Order</div>

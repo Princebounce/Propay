@@ -52,14 +52,14 @@ const Payment = () => {
                   <p className="font-bold text-sm mb-1">
                     FirstBank Plc {label}
                   </p>
-                  <p className="text-sm">Lorem ipsum dolor sit amet</p>
+                  <p className="text-sm">3698745120 </p>
                 </div>
               ))}
               {/* Second Row */}
               {[4, 5, 6].map((label) => (
                 <div key={label} className="flex flex-col w-full md:w-auto">
-                  <p className="font-bold text-sm mb-1">Label {label}</p>
-                  <p className="text-sm">Lorem ipsum dolor sit amet</p>
+                  <p className="font-bold text-sm mb-1">FirstBank {label}</p>
+                  <p className="text-sm">7895422365</p>
                 </div>
               ))}
             </div>
@@ -72,15 +72,15 @@ const Payment = () => {
               {/* First Row */}
               {[1, 2, 3].map((label) => (
                 <div key={label} className="flex flex-col w-full md:w-auto">
-                  <p className="font-bold text-sm mb-1">Label {label}</p>
-                  <p className="text-sm">Lorem ipsum dolor sit amet</p>
+                  <p className="font-bold text-sm mb-1">Laundry account {label}</p>
+                  <p className="text-sm">0258746987 </p>
                 </div>
               ))}
               {/* Second Row */}
               {[4, 5, 6].map((label) => (
                 <div key={label} className="flex flex-col w-full md:w-auto">
-                  <p className="font-bold text-sm mb-1">Label {label}</p>
-                  <p className="text-sm">Lorem ipsum dolor sit amet</p>
+                  <p className="font-bold text-sm mb-1">Laundry {label}</p>
+                  <p className="text-sm">2654789321 </p>
                 </div>
               ))}
             </div>
@@ -94,18 +94,12 @@ const Payment = () => {
               {[1, 2, 3].map((label) => (
                 <div key={label} className="flex flex-col w-full md:w-auto">
                   <p className="font-bold text-sm mb-1">
-                    FirstBank Plc {label}
+                    Bank Name {label}
                   </p>
-                  <p className="text-sm">Lorem ipsum dolor sit amet</p>
+                  <p className="text-sm">Lorem ipsum </p>
                 </div>
               ))}
-              {/* Second Row */}
-              {[4, 5, 6].map((label) => (
-                <div key={label} className="flex flex-col w-full md:w-auto">
-                  <p className="font-bold text-sm mb-1">Label {label}</p>
-                  <p className="text-sm">Lorem ipsum dolor sit amet</p>
-                </div>
-              ))}
+              
             </div>
           </div>
           {/* content for crpto card */}

@@ -63,7 +63,7 @@ const Invoice = () => {
             <div className="lg:w-1/12">{index + 1}</div>
             <div className="lg:w-2/12 flex justify-start items-center">
               #12345{" "}
-              <Link to="/">
+              <Link to="/invoice-temp">
                 <img src={download} className="ml-1 w-4 h-4" alt="download" />
               </Link>
             </div>
